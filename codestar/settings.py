@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-%ffy9!n!+ysjc^@ol(2)*0-2#g6vlp3ctwfgk5_y$cect2@w3n'
-SECRET_KEY = os.environ.get("w-bLLYpFC9A*t4iAkc_Mv4L7booj.EKRyt")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 
 
@@ -91,6 +91,12 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
